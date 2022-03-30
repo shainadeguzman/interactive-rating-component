@@ -1,0 +1,198 @@
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(217, 11%, 24%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+}
+
+@font-face {
+  font-family: Overpass;
+  src: url(/Overpass/Overpass-VariableFont_wght.ttf);
+}
+
+*,
+*::before,
+::after {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  font-family: "Overpass", sans-serif;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+}
+
+.card-container {
+  max-width: 144rem;
+  padding: 0 3rem;
+  margin: 0 auto;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: absolute;
+  padding: 2.4rem;
+  border-radius: 15px;
+  min-height: 30vh;
+  width: 30rem;
+  background-color: var(--dark-blue);
+}
+
+// CARD RATING
+.card-rating {
+  z-index: 1;
+  color: var(--color-white);
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+
+  &__image {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--medium-grey);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.8rem;
+  }
+
+  &__image img {
+    width: 30%;
+  }
+
+  & h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+
+  & p {
+    color: var(--light-grey);
+    margin-bottom: 2.6rem;
+    line-height: 1.6;
+  }
+
+  &__list {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 2.6rem 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & button {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    font-family: "Overpass", sans-serif;
+
+    &:focus-visible {
+      outline: none;
+      border-color: var(--color-white);
+    }
+  }
+
+  &__item {
+    background-color: var(--medium-grey);
+    padding: 1rem 1.6rem;
+    color: var(--light-grey);
+
+    &:hover {
+      background-color: var(--orange);
+      color: var(--color-white);
+    }
+
+    &.active {
+      background-color: var(--light-grey);
+      color: var(--color-white);
+    }
+  }
+
+  &__button {
+    background-color: var(--orange);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.8rem 1.4rem;
+    color: var(--color-white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: var(--orange);
+      background-color: var(--color-white);
+    }
+  }
+}
+
+// CARD RESULT
+.card-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  transform: scale(0);
+  opacity: 0;
+
+  &.visible {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  & img {
+    width: 50%;
+    display: block;
+    margin-bottom: 3rem;
+  }
+
+  &__rating {
+    background-color: var(--medium-grey);
+    color: var(--orange);
+    border-radius: 50px;
+    font-size: 1.3rem;
+    padding: 0.6rem 1.4rem;
+    height: fit-content;
+    margin-bottom: 2.4rem;
+  }
+
+  h1 {
+    color: var(--color-white);
+    margin: 0.8rem;
+    font-size: 2.8rem;
+  }
+
+  &__text {
+    color: var(--light-grey);
+    line-height: 1.6;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
+
+.attribution {
+  text-align: center;
+  color: var(--color-white);
+}
+
+.attribution a {
+  color: var(--orange);
+}

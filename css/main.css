@@ -1,0 +1,237 @@
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(217, 11%, 24%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+}
+
+@font-face {
+  font-family: Overpass;
+  src: url(/Overpass/Overpass-VariableFont_wght.ttf);
+}
+
+*,
+*::before,
+::after {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  font-family: "Overpass", sans-serif;
+  font-size: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.card-container {
+  max-width: 144rem;
+  padding: 0 3rem;
+  margin: 0 auto;
+  min-height: 95vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card {
+  position: absolute;
+  padding: 2.4rem;
+  border-radius: 15px;
+  min-height: 30vh;
+  width: 30rem;
+  background-color: var(--dark-blue);
+}
+
+.card-rating {
+  z-index: 1;
+  color: var(--color-white);
+  display: none;
+}
+
+.card-rating.visible {
+  display: block;
+}
+
+.card-rating__image {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--medium-grey);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2.8rem;
+}
+
+.card-rating__image img {
+  width: 30%;
+}
+
+.card-rating h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.card-rating p {
+  color: var(--light-grey);
+  margin-bottom: 2.6rem;
+  line-height: 1.6;
+}
+
+.card-rating__list {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 2.6rem 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card-rating button {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  font-family: "Overpass", sans-serif;
+}
+
+.card-rating button:focus-visible {
+  outline: none;
+  border-color: var(--color-white);
+}
+
+.card-rating__item {
+  background-color: var(--medium-grey);
+  padding: 1rem 1.6rem;
+  color: var(--light-grey);
+}
+
+.card-rating__item:hover {
+  background-color: var(--orange);
+  color: var(--color-white);
+}
+
+.card-rating__item.active {
+  background-color: var(--light-grey);
+  color: var(--color-white);
+}
+
+.card-rating__button {
+  background-color: var(--orange);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.8rem 1.4rem;
+  color: var(--color-white);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card-rating__button:hover {
+  color: var(--orange);
+  background-color: var(--color-white);
+}
+
+.card-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+
+.card-result.visible {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.card-result img {
+  width: 50%;
+  display: block;
+  margin-bottom: 3rem;
+}
+
+.card-result__rating {
+  background-color: var(--medium-grey);
+  color: var(--orange);
+  border-radius: 50px;
+  font-size: 1.3rem;
+  padding: 0.6rem 1.4rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 2.4rem;
+}
+
+.card-result h1 {
+  color: var(--color-white);
+  margin: 0.8rem;
+  font-size: 2.8rem;
+}
+
+.card-result__text {
+  color: var(--light-grey);
+  line-height: 1.6;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.attribution {
+  text-align: center;
+  color: var(--color-white);
+}
+
+.attribution a {
+  color: var(--orange);
+}
