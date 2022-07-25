@@ -32,5 +32,5 @@ Users should be able to:
 
 ## Author
 
-- Website - [Shaina De Guzman](https://shainadeguzman.netlify.app/)
+- Website - [Shaina De Guzman](https://deguzman.netlify.app/)
 - Frontend Mentor - [@shainadeguzman](https://www.frontendmentor.io/profile/shainadeguzman)
